@@ -2,4 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-image: url(https://cdn.pixabay.com/photo/2018/03/16/04/40/grid-3230205_1280.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
