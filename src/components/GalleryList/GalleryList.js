@@ -15,3 +15,4 @@ class GalleryList extends Component {
 }
 
 export default GalleryList;
+

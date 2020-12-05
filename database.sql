@@ -16,5 +16,9 @@ INSERT INTO "gallery" ("path", "alt", "description", "date") VALUES ('images/fir
 
 UPDATE "gallery" SET "likes" = $1 WHERE id = $2;
 
+SELECT * FROM "gallery" ORDER BY "date", "path";
+
+DELETE FROM "gallery" WHERE id = $1;
+
 SELECT * FROM "gallery";
 
