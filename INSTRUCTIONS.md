@@ -43,13 +43,13 @@ To practice passing values through `props` in React, you will build the gallery 
 - [x] Use `axios` to retrieve (`GET`) data from to `/gallery` and store it in `App.js`.
 - [x] Create a new **component** for the `GalleryList` and pass it the gallery data stored in `App` via `props`.
     - [x] Iterate (loop over) the list of gallery data
-    - [] Make GalleryItems
+    - [x] Make GalleryItems
 - [x] Create a new **component** called `GalleryItem.js` and pass it the individual gallery item via `props`. 
     - [x] Update the `GalleryList` to use this component to display an image.
-    - [] Swap the image with the description on click. Use [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
+    - [x] Swap the image with the description on click. Use [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
     - [x] Display the number likes for each item and include a like button.
-    - [] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
-    - [] Update the gallery each time a like button is clicked.
+    - [x] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
+    - [x] Update the gallery each time a like button is clicked.
 
 
 
@@ -63,9 +63,9 @@ For each `feature` of your application, make a branch, work on the branch, and t
 
 ### Features
 
-- [] Move the data into a database (postgresql)
-    - [] name your database `react_gallery`
-    - [] include a `database.sql` file documenting your database tables
+- [x] Move the data into a database (postgresql)
+    - [x] name your database `react_gallery`
+    - [x] include a `database.sql` file documenting your database tables
 - [] Add a form (new **component**) that allows a user to POST a new gallery item
   - [] Client side form (use absolute URL for images)
   - [] Server side route for posting an image

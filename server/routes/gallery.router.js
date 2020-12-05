@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
+const pool = require('../modules/pool'); // require in database/pg
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
@@ -18,7 +19,17 @@ router.put('/like/:id', (req, res) => {
 
 // GET Route
 router.get('/', (req, res) => {
-    res.send(galleryItems);
+    const sqlText = `SELECT * FROM "gallery" ORDER BY "date";`;
+    pool.query(sqlText)
+        .then((result) => {
+            console.log('Got images from database...', result.rows);
+            res.send(result.rows);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500); // Good server always responds
+        })
+    //res.send(galleryItems);
 }); // END GET Route
 
 module.exports = router;

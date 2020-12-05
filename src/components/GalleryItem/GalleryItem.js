@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
+import './GalleryItem.css';
 
 class GalleryItem extends Component {
 
     state ={
-        image: this.props.image.path
+        image: true
     }
 
     toggleImage = () => {
-        console.log('in toggleImage');
-        this.setState({
-            image: !this.state.image
+        this.setState({ 
+            image: !this.state.image 
         })
     }
 
   render() {
     return (
-      <div>
-        <h2>Hello from GalleryItem</h2>
-        <p>{this.props.image.path ? <button onClick={(event) => this.toggleImage(event, this.props.image.id)}>
-            <img src={this.props.image.path} alt="goat"/></button> : 
-            <button onClick={(event) => this.toggleImage(event, this.props.image.id)}>{this.props.image.description}</button>
+      <div className="galleryImages">
+       
+        <p>{this.state.image ? <button onClick={this.toggleImage}>
+            <img src={this.props.image.path} alt={this.props.image.alt} className='imageBox'/></button> : 
+            <button onClick={this.toggleImage}>{this.props.image.description}</button>
         }</p>
-        {/* <button onClick={this.toggleImage}><img src={this.props.image.path} alt="goat"/></button> */}
+       
             <br/>
             <button onClick={(event) => this.props.addLoves(event, this.props.image.id)}>&hearts;</button>
         <h2>{this.props.image.likes} people love this image!</h2>
