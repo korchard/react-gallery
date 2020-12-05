@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+//import Button from '@material-ui/core/Button';
+//import Card from '@material-ui/core/Card';
 import './GalleryItem.css';
 
 class GalleryItem extends Component {
@@ -24,7 +26,7 @@ class GalleryItem extends Component {
        
             <br/>
             <button onClick={(event) => this.props.addLoves(event, this.props.image.id)}>&hearts;</button>
-        <h2>{this.props.image.likes} people love this image!</h2>
+        <p>{this.props.image.likes} people love this image!</p>
       </div>
     );
   }
