@@ -13,10 +13,11 @@ class App extends Component {
 
   // POST ROUTE
   addImage = (newImage) => {
+    console.log('in addImage');
 
     axios.post('/gallery', newImage)
     .then( (response) => {
-      console.log('Response:', response); 
+      console.log('Added an image...', response); 
       this.getGallery() 
     })
     .catch( (error)=> {
@@ -26,12 +27,12 @@ class App extends Component {
   }
 
   // PUT ROUTE
-  addLoves = (event, id) => { 
-    console.log('id', id);
+  addLoves = (id) => { 
+    console.log('in addLoves');
   
       axios.put(`/gallery/like/${id}`)
       .then( (response) => {
-        console.log('Response:', response); 
+        console.log('Updated the loves...', response); 
         this.getGallery() 
       })
       .catch( (error)=> {
@@ -61,14 +62,29 @@ class App extends Component {
     })
   }
 
+  // DELETE ROUTE
+  removeImage = (id) => {
+    console.log('in removeImage');
+
+    axios.delete(`/gallery/${id}`)
+    .then((response) => {
+      console.log('Removed the image...', response);
+      this.getGallery()
+    })
+    .catch((error) => {
+      alert('Something bad happened...');
+      console.log('Bad news bears', error);
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
         </header>
-        <GalleryForm addImage={this.addImage}/>
-        <GalleryList galleryList={this.state.galleryList} addLoves={this.addLoves}/>
+        <GalleryForm addImage={this.addImage} />
+        <GalleryList galleryList={this.state.galleryList} addLoves={this.addLoves} removeImage={this.removeImage}/>
       </div>
     );
   }
