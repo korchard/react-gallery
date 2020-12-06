@@ -34,7 +34,7 @@
     color: rgba(0, 0, 0, 0.87);
     transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   
-    background: linear-gradient(to bottom right, rgb(56, 55, 55) 0%, black 100%);
+    background: linear-gradient(to bottom right, rgb(77, 76, 76) 0%, black 100%);
 }
 
 .text {

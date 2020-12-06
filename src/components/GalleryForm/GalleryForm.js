@@ -45,10 +45,10 @@ class GalleryForm extends Component {
       <div>
           <StylesProvider injectFirst>
              <form onSubmit={this.handleEvent}>
-                <InputLabel htmlFor="path" className="inputBox">Image Path:</InputLabel> 
+                <InputLabel htmlFor="path" className="inputBox">URL Path:</InputLabel> 
                 <Input type="url" value={this.state.newImage.path}
                     onChange={(event) => this.createImage(event, 'path')} id="path" className="inputBox"/>
-                <InputLabel htmlFor="alt" className="inputBox">Alternative Text for Image:</InputLabel>
+                <InputLabel htmlFor="alt" className="inputBox">Alt:</InputLabel>
                 <Input type="text" value={this.state.newImage.alt}
                     onChange={(event) => this.createImage(event, 'alt')} id="alt" className="inputBox"/>
                 <InputLabel htmlFor="description" className="inputBox">Description:</InputLabel>
