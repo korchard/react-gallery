@@ -35,7 +35,7 @@ Link to software that is required to install the app (e.g. node).
 ### SQL Requirements
 - PostgreSQL
 
-1. Create a postgres SQL database named `react-gallery` using an app like Postico.
+1. Create a postgres SQL database named `react_gallery` using an app like Postico.
 2. The queries in the `databse.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. 
 3. Open up your editor of choice and run an `npm install` - this will install the dependencies - `express.js`, `node.js`, `react`, `axios`, `materialUI`, `nodemon`, and `pg`.
 4. Run the server first `npm run server`.
@@ -60,15 +60,15 @@ List technologies and frameworks here
 - express
 - postgreSQL
 - material UI
-- axios
 
 ## License
 
-[![License: MIT](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Acknowledgement
 
-Thank you to Josie, for being my coding buddy. Thank you to Steven and Jordan for supporting me and answering all my questions. Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Special thanks to my primary instructor, [Mary Mossman](https://github.com/mbMosman)
+Thank you to Josie, for being my coding buddy. Thank you to Steven and Jordan for supporting me and answering all my questions. Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Special thanks to my primary instructor, 
+-[Mary Mossman](https://github.com/mbMosman)
 -[Josie Fredericksen](https://github.com/freder48)
 -[Jordan Newberry](https://github.com/jordanNewberry21)
 -[Steven Maloney](https://github.com/sdeda1us)
