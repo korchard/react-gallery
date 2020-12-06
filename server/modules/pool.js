@@ -20,8 +20,8 @@ if (process.env.DATABASE_URL) {
     };
 }
 
-// Create the pool with the proper config
-const pool = new pg.Pool(config);
+// Create the pool with the proper config - this is declaring a variable for the DB to be used again in the routes
+const pool = new pg.Pool(config); 
 
 pool.on("connect", () => {
     console.log("connected to postgres..."); //connects database
@@ -31,4 +31,4 @@ pool.on("error", (err) => {
     console.log("error connecting to postgres...", err);
 });
 
-module.exports = pool;
+module.exports = pool; // exports the DB, and it's config to be used in the routes

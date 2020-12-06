@@ -8,6 +8,7 @@ import './GalleryForm.css';
 
 class GalleryForm extends Component {
 
+    // local state, needed to make newImage to send to POST route
     state = {
         galleryList: [],
         newImage: {
@@ -18,17 +19,18 @@ class GalleryForm extends Component {
         }
       }
 
-    createImage = (event, propertyName) => { 
+    // need to pass the event as an arguement here because it needs to be stored
+    createImage = (event, propertyName) => { // takes input of what is put in input boxes & the second arguement of property name
         console.log('Creating the image', event.target.value)
         this.setState({
           newImage: {
-            ...this.state.newImage,
-            [propertyName]: event.target.value 
-          }
-        })
-      }
+            ...this.state.newImage, // this is taking what was put in the other input boxes and keeping them
+            [propertyName]: event.target.value // this is setting the value to the argument of property name passed in
+          } 
+        }) // sets input boxes 
+      } // end createImage function
 
-      handleEvent = (event) => {
+      handleEvent = (event) => { // this is just emptying the input values once the form is completed
           event.preventDefault();
           this.setState({
             newImage: {
@@ -36,15 +38,17 @@ class GalleryForm extends Component {
                 alt: '',
                 description: '',
                 date: ''
-            }
-          })
-      }
+            } 
+          }) // sets the object to empty
+      } // end handleEvent function
 
   render() {
     return (
       <div>
           <StylesProvider injectFirst>
-             <form onSubmit={this.handleEvent}>
+            {/* the onSubmit handles emptying the input values - the createImage creates the newImage object and the 
+            addImage function in the button sends the object through the POST route to the DB */}
+             <form onSubmit={this.handleEvent}> 
                 <InputLabel htmlFor="path" className="inputBox">URL Path:</InputLabel> 
                 <Input type="url" value={this.state.newImage.path}
                     onChange={(event) => this.createImage(event, 'path')} id="path" className="inputBox"/>
@@ -61,8 +65,8 @@ class GalleryForm extends Component {
             </form>
         </StylesProvider>
       </div>
-    );
-  }
-}
+    ); // end return
+  } // end render function
+} // end Component
 
 export default GalleryForm;

@@ -6,6 +6,7 @@ import './GalleryItem.css';
 
 class GalleryItem extends Component {
 
+    // local state to toggle the image and description
     state ={
         image: true
     }
@@ -13,8 +14,8 @@ class GalleryItem extends Component {
     toggleImage = () => {
         this.setState({ 
             image: !this.state.image 
-        })
-    }
+        }) // sets the local state to be what it was no previously when the function is called
+    } // end toggleImage function
 
   render() {
     return (
@@ -23,6 +24,8 @@ class GalleryItem extends Component {
         <Card className="card">
         <Button onClick={() => this.props.removeImage(this.props.image.id)} className="heart">x</Button>
         <br/>
+        {/* this.state.image is a ternary conditional that says if the local state is true (i.e. the image) than when toggleImage is 
+        clicked, change what is displayed to the latter portion of the conditional - what is after the colon */}
             {this.state.image ? <Button onClick={this.toggleImage}>
             <img src={this.props.image.path} alt={this.props.image.alt} className="imageBox"/></Button> : 
             <Button onClick={this.toggleImage} className="imageBox">--- {this.props.image.date} --- <br/> {this.props.image.description}</Button>
@@ -34,8 +37,8 @@ class GalleryItem extends Component {
             </Card>
             </StylesProvider>
       </div>
-    );
-  }
-}
+    ); // end return
+  } // end render function
+} // end Component
 
 export default GalleryItem;
