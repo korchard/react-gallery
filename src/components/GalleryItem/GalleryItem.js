@@ -25,7 +25,7 @@ class GalleryItem extends Component {
         <br/>
             {this.state.image ? <Button onClick={this.toggleImage}>
             <img src={this.props.image.path} alt={this.props.image.alt} className="imageBox"/></Button> : 
-            <Button onClick={this.toggleImage} className="imageBox">{this.props.image.description}</Button>
+            <Button onClick={this.toggleImage} className="imageBox">--- {this.props.image.date} --- <br/> {this.props.image.description}</Button>
         }
        
             <br/>
