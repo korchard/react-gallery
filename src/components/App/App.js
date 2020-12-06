@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import Grid from '@material-ui/core/Grid';
 
 import GalleryList from '../GalleryList/GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
@@ -90,11 +91,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Grid>
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <GalleryForm addImage={this.addImage} />
         <GalleryList galleryList={this.state.galleryList} addLoves={this.addLoves} removeImage={this.removeImage}/>
+        </Grid>
       </div>
     ); // end return
   } // end render function
