@@ -22,7 +22,7 @@ class GalleryItem extends Component {
     return (
       <div className="galleryImages">
        <StylesProvider injectFirst>
-       <Grid container spacing={12}>
+       <Grid container spacing={12} alignItems="center">
         <Card className="card">
         <Button onClick={() => this.props.removeImage(this.props.image.id)} className="heart">x</Button>
         <br/>

@@ -91,7 +91,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Grid>
+        <Grid alignItems="center">
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
         </header>
