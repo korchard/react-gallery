@@ -5,6 +5,9 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
+    "@uppy/core": "^1.14.1",
+    "@uppy/dashboard": "^1.13.0",
+    "@uppy/xhr-upload": "^1.6.7",
     "axios": "^0.19.2",
     "pg": "^8.5.1",
     "react": "^16.7.0",
