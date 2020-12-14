@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import { StylesProvider } from "@material-ui/core/styles";
-import Grid from '@material-ui/core/Grid';
 import './GalleryItem.css';
 
 class GalleryItem extends Component {
@@ -22,7 +21,6 @@ class GalleryItem extends Component {
     return (
       <div className="galleryImages">
        <StylesProvider injectFirst>
-       <Grid container spacing={12} alignItems="center">
         <Card className="card">
         <Button onClick={() => this.props.removeImage(this.props.image.id)} className="heart">x</Button>
         <br/>
@@ -37,7 +35,6 @@ class GalleryItem extends Component {
             <Button onClick={() => this.props.addLoves(this.props.image.id)} className="heart">&hearts;</Button>
             <p className="text">{this.props.image.likes} people love this image!</p>
             </Card>
-            </Grid>
             </StylesProvider>
       </div>
     ); // end return
